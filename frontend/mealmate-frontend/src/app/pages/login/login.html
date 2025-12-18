@@ -1,0 +1,27 @@
+<div class="page">
+  <div class="card">
+    <h1 class="title">MealMate</h1>
+
+    <div *ngIf="!mfaRequired">
+      <input class="input" placeholder="email" [(ngModel)]="email" />
+      <input class="input" placeholder="password" type="password" [(ngModel)]="password" />
+      <button class="btn" (click)="onLogin()" [disabled]="loading">
+        {{ loading ? 'Loading...' : "Let's Eat" }}
+      </button>
+      <p class="switch">
+      Don’t have an account?
+      <a routerLink="/register">Register now</a>
+      </p>
+    </div>
+
+    <div *ngIf="mfaRequired">
+      <p class="subtitle">Enter your 6-digit MFA code</p>
+      <input class="input" placeholder="123456" [(ngModel)]="mfaCode" />
+      <button class="btn" (click)="onVerifyMfa()" [disabled]="loading">
+        {{ loading ? 'Verifying...' : 'Verify' }}
+      </button>
+    </div>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </div>
+</div>

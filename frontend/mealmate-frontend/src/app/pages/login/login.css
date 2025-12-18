@@ -1,0 +1,73 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9efe6;
+}
+
+.card {
+  width: 360px;
+  padding: 28px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  text-align: center;
+  margin: 0 0 18px 0;
+  font-size: 40px;
+  color: #2f4d3a;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0 0 12px 0;
+  color: #2f4d3a;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 16px;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #2f4d3a;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 12px;
+  color: #b00020;
+  text-align: center;
+}
+.register-link {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: #2f855a;
+  font-weight: 600;
+  text-decoration: none;
+}

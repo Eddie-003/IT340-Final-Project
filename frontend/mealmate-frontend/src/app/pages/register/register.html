@@ -1,0 +1,24 @@
+<div class="page">
+  <div class="card">
+    <h1 class="title">MealMate</h1>
+    <p class="subtitle">Create your account</p>
+
+    <form (ngSubmit)="register()" class="form">
+      <input class="input" type="email" [(ngModel)]="email" name="email" placeholder="email" required />
+      <input class="input" type="password" [(ngModel)]="password" name="password" placeholder="password" required />
+      <input class="input" type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="confirm password" required />
+
+      <button class="btn" type="submit" [disabled]="loading">
+        {{ loading ? 'Creating...' : 'Create Account' }}
+      </button>
+    </form>
+
+    <p class="msg success" *ngIf="success">{{ success }}</p>
+    <p class="msg error" *ngIf="error">{{ error }}</p>
+
+    <p class="switch">
+      Already have an account?
+      <a routerLink="/login">Log in</a>
+    </p>
+  </div>
+</div>

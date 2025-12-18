@@ -1,0 +1,53 @@
+<div class="wrap">
+  <div class="topbar">
+    <h1>MealMate</h1>
+    <button class="btn" (click)="logout()">Logout</button>
+  </div>
+
+  <div class="card">
+    <h2>Add a meal</h2>
+
+    <div class="grid">
+      <input class="input" placeholder="Meal name" [(ngModel)]="meal_text" />
+      <input class="input" type="number" placeholder="Calories" [(ngModel)]="calories" />
+      <input class="input" type="number" placeholder="Protein (g)" [(ngModel)]="protein_g" />
+      <input class="input" type="number" placeholder="Carbs (g)" [(ngModel)]="carbs_g" />
+      <input class="input" type="number" placeholder="Fat (g)" [(ngModel)]="fat_g" />
+    </div>
+
+    <button class="btn primary" (click)="addMeal()">Add Meal</button>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <h2>Meal history</h2>
+      <button class="btn" (click)="loadMeals()">Refresh</button>
+    </div>
+
+    <p *ngIf="loading">Loading...</p>
+    <p *ngIf="!loading && meals.length === 0">No meals yet.</p>
+
+    <table *ngIf="!loading && meals.length > 0">
+      <thead>
+        <tr>
+          <th>Meal</th>
+          <th>Cal</th>
+          <th>P</th>
+          <th>C</th>
+          <th>F</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of meals">
+          <td>{{ m.meal_text }}</td>
+          <td>{{ m.calories }}</td>
+          <td>{{ m.protein_g }}</td>
+          <td>{{ m.carbs_g }}</td>
+          <td>{{ m.fat_g }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
